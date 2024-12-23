@@ -40,7 +40,7 @@ if clickRun == True and file_path is not None and weight != 0:
     #check if Mass column is integer/float/string
     if (seq_df["Mass"].dtypes == int) or (seq_df["Mass"].dtypes == float):
         for mass_col in seq_df.columns:
-            if mass_col == "Mass" or mass_col == "mass" or mass_col == "MASS":
+            if mass_col in ["MASS", "mass", "Mass"]:
                 st.info(f"\nDatatype of the {mass_col} Column: int/float")
                 break
         #invoking the filter function
