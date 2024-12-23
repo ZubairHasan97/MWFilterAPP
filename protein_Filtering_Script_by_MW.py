@@ -49,7 +49,7 @@ if clickRun == True and file_path is not None and weight != 0:
         #converting Mass string data into integer
         seq_df["Mass"] = seq_df["Mass"].str.replace(",", "").astype(int)
         for mass_col in seq_df.columns:
-            if mass_col == "Mass" or mass_col == "mass" or mass_col == "MASS":
+            if mass_col in ["MASS", "mass", "Mass"]:
                 st.info(f"\nDatatype of the {mass_col} Column: str ==>> converted into int")
                 break
         filter_aaseq_MW(seq_df, weight)
